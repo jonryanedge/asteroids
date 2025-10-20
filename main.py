@@ -15,7 +15,7 @@ def main():
                 return
 
         screen.fill("black", rect=None, special_flags=0)
-        display.flip()
+        screen.flip()
 
 if __name__ == "__main__":
     main()
