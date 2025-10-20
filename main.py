@@ -24,7 +24,7 @@ def main():
 
         screen.fill("black", rect=None, special_flags=0)
         for item in drawable:
-            item.draw(dt)
+            item.draw(screen)
         updateable.update(dt)
         pygame.display.flip()
         dt = (clock.tick(60) / 1000)
