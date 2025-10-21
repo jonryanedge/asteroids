@@ -29,7 +29,7 @@ class Player(CircleShape):
 
     def shoot(self, dt):
         if self.timer > 0:
-            print("Cooldown active")
+            pass
         else:
             fire = Shot(self.position.x, self.position.y)
             fire.velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
