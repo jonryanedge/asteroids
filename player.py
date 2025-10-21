@@ -26,8 +26,8 @@ class Player(CircleShape):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
         self.position += forward * PLAYER_MOVE_SPEED * dt
 
-    def shoot(self, position, dt):
-        fire = Shot(position.x, position.y)
+    def shoot(self, dt):
+        fire = Shot(self.position.x, self.position.y)
         fire.velocity = pygame.Vector2(0, 1).rotate(self.rotation)
         fire.position += fire.velocity * PLAYER_SHOOT_SPEED * dt
 
@@ -47,4 +47,5 @@ class Player(CircleShape):
             self.move(-dt)
 
         if keys[pygame.K_SPACE]:
-            self.shoot(self.position, dt)
+            print("Shot fired")
+            self.shoot(dt)
