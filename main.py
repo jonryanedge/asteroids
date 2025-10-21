@@ -35,10 +35,15 @@ def main():
         for item in drawable:
             item.draw(screen)
         updateable.update(dt)
-        for rocks in asteroids:
-            if (rocks.collision(player)):
+        for rock in asteroids:
+            if (rock.collision(player)):
                 print("Game over!")
                 sys.exit(0)
+            for bullet in shots:
+                if (rocks.collision(bullet)):
+                    rocks.kill()
+                    bullet.kill()
+
         pygame.display.flip()
         dt = (clock.tick(60) / 1000)
 
