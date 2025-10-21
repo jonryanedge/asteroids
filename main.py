@@ -40,9 +40,9 @@ def main():
                 print("Game over!")
                 sys.exit(0)
             for bullet in shots:
-                if (rocks.collision(bullet)):
-                    rocks.kill()
+                if (bullet.collision(rock)):
                     bullet.kill()
+                    rock.kill()
 
         pygame.display.flip()
         dt = (clock.tick(60) / 1000)
