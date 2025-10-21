@@ -42,7 +42,7 @@ def main():
             for bullet in shots:
                 if (bullet.collision(rock)):
                     bullet.kill()
-                    rock.split()
+                    rock.split(screen)
 
         pygame.display.flip()
         dt = (clock.tick(60) / 1000)
