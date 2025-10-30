@@ -21,7 +21,7 @@ def main():
     Shot.containers = (shots, drawable, updateable)
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    player = Player(SCREEN_WIDTH / 4, SCREEN_HEIGHT / 4)
     asteroidfield = AsteroidField()
 
     clock = pygame.time.Clock()
@@ -38,7 +38,7 @@ def main():
         for rock in asteroids:
             if (rock.collision(player)):
                 print("Game over!")
-                sys.exit(0)
+                # sys.exit(0)
             for bullet in shots:
                 if (bullet.collision(rock)):
                     bullet.kill()
