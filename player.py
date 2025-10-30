@@ -1,3 +1,4 @@
+import sys
 import pygame
 from constants import *
 from circleshape import CircleShape
@@ -53,3 +54,6 @@ class Player(CircleShape):
 
         if keys[pygame.K_SPACE]:
             self.shoot(dt)
+
+        if keys[pygame.K_LCTRL] & keys[pygame.K_c]:
+            sys.exit(0)
